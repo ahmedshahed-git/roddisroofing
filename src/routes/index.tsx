@@ -440,26 +440,48 @@ function Index() {
         <div className="mx-auto max-w-6xl px-4">
           <h2 className="text-3xl font-bold uppercase md:text-4xl">See Our Work In Action</h2>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {VIDEOS.map((url) => (
-              <div key={url} className="aspect-9/16 w-full bg-charcoal">
-                <iframe
-                  src={`https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(
-                    url,
-                  )}&show_text=false&width=340`}
-                  title="Roddis Roofing video"
-                  className="h-full w-full border-0"
-                  scrolling="no"
-                  allowFullScreen
-                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            {VIDEOS.map((video) => (
+              <a
+                key={video.url}
+                href={video.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative block aspect-9/16 w-full overflow-hidden bg-charcoal"
+              >
+                <img
+                  src={video.thumbnail}
+                  alt={video.alt}
+                  width={900}
+                  height={1600}
                   loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-              </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-accent/90 text-accent-foreground shadow-lg transition-transform group-hover:scale-110">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="h-7 w-7"
+                      aria-hidden="true"
+                    >
+                      <path d="M8 5v14l11-7L8 5z" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-5 text-center">
+                  <p className="text-sm font-semibold tracking-wide text-charcoal-foreground uppercase">
+                    Watch on Facebook
+                  </p>
+                </div>
+              </a>
             ))}
           </div>
           <a
             href={INSTAGRAM}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="mt-8 inline-block border border-foreground/20 px-6 py-3 text-sm font-semibold tracking-wide uppercase transition-colors hover:bg-foreground/5"
           >
             Follow us on Instagram

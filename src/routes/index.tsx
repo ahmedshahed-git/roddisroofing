@@ -153,9 +153,21 @@ const GALLERY = [
 ];
 
 const VIDEOS = [
-  "https://www.facebook.com/reel/1741203313747559/",
-  "https://www.facebook.com/reel/2549127135538433/",
-  "https://www.facebook.com/reel/1217110604824020/",
+  {
+    url: "https://www.facebook.com/reel/1741203313747559/",
+    thumbnail: work4,
+    alt: "Roofing work highlight reel one",
+  },
+  {
+    url: "https://www.facebook.com/reel/2549127135538433/",
+    thumbnail: work5,
+    alt: "Roofing work highlight reel two",
+  },
+  {
+    url: "https://www.facebook.com/reel/1217110604824020/",
+    thumbnail: work6,
+    alt: "Roofing work highlight reel three",
+  },
 ];
 
 function Index() {

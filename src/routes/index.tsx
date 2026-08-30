@@ -164,7 +164,7 @@ function Index() {
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const data = new FormData(e.currentFormTarget ?? e.currentTarget);
+    const data = new FormData(e.currentTarget);
     const body = [
       `Name: ${data.get("name")}`,
       `Phone: ${data.get("phone")}`,
@@ -184,7 +184,7 @@ function Index() {
       {/* Header */}
       <header className="sticky top-0 z-50 border-b border-border bg-charcoal text-charcoal-foreground">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-          <a href="#top" className="font-display text-xl font-700 tracking-widest uppercase">
+          <a href="#top" className="font-display text-xl font-bold tracking-widest uppercase">
             Roddis <span className="text-accent">Roofing</span>
           </a>
           <nav className="hidden items-center gap-6 lg:flex">
